@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaoAdv</title>
@@ -11,14 +12,30 @@
 
     <main>
 
-        <div>
+        <div class="pass active" id="pass-0">
+            <img src="https://i.imgur.com/sSUexEn.gif">
             <p>You're being born. </p>
             <button class="next-btn" data-pass="1">Cry</button>
-         
+            <button class="next-btn" data-pass="2">Be quiet</button>
         </div>
+
+        <div class="pass" id="pass-1">
+            <p>Your mom offers you a toy. Which onde will you choose? </p>
+            <button class="next-btn" data-pass="3">Dog plushie</button>
+            <button class="next-btn" data-pass="4">Cat wooden toy</button>
+        </div>
+
+        <div class="pass" id="pass-2">
+            <p>Your parents seem amused by it. They say you'll become a great cultivator. What will you do?</p>
+            <button class="next-btn" data-pass="5">Try to say "mama"</button>
+            <button class="next-btn" data-pass="6">Try to say "papa"</button>
+        </div>
+
 
     </main>
 
+    <script src="script.js"></script>
+    
 </body>
 
 </html>
