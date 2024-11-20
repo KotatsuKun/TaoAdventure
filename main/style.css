@@ -6,7 +6,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
     margin: 0px;
 }
 
@@ -21,6 +20,8 @@ img{
 }
 
 button {
+    width: 150px;
+    height: 300px;
     background-color: gray;
     color: white;
     border-style: hidden;
@@ -34,10 +35,23 @@ button:active{
     background-color: rgb(71, 71, 71);
 }
 
+.cry-btn button{
+    background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZiYTFrMngzbnU3aWZ3MTdjb3AyN2oyeGE1ZW5idm5nbzhuOWtpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3fmRTfVIKMRiM/giphy.webp);
+    background-size: cover;
+}
+
 .pass{
     display: none;
 }
 
 .pass.active{
     display: block;
+}
+
+.buttons {
+
+    display: flex;
+    overflow-x: auto;
+    row-gap: 5px;
+
 }
