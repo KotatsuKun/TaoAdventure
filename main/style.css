@@ -1,6 +1,10 @@
 
 body{
 
+    background:
+    url(https://i.pinimg.com/736x/39/25/0c/39250c63d80f67c24606bb5f80ffd3c8.jpg);
+    background-size: cover;
+    background-position: fill;
     background-color: rgb(32, 32, 32);
     color: antiquewhite;
     display: flex;
@@ -10,6 +14,7 @@ body{
 }
 
 main{
+    background-color: rgb(32, 32, 32);
     text-align: center;
     max-width: 90%;
 
@@ -23,21 +28,25 @@ button {
     width: 150px;
     height: 300px;
     background-color: gray;
+    background-position: center;
     color: white;
     border-style: hidden;
 }
 
 button:hover{
     background-color: darkgray;
+    background-blend-mode: overlay;
 }
 
 button:active{
     background-color: rgb(71, 71, 71);
+    background-blend-mode: overlay;
 }
 
 .cry-btn button{
     background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZiYTFrMngzbnU3aWZ3MTdjb3AyN2oyeGE1ZW5idm5nbzhuOWtpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3fmRTfVIKMRiM/giphy.webp);
     background-size: cover;
+    background-position: center;
 }
 
 .pass{
