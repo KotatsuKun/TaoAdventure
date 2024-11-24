@@ -21,7 +21,7 @@
         <div class="pass active" id="pass-0">
 
             <script src="music.js"></script>
-            <button class='next-btn' data-pass="1" onclick="Music1play()"> Start! </button>
+            <button class='next-btn' data-pass="1" onclick="Music1play(), background1()"> Start! </button>
             
         </div>
 
@@ -44,14 +44,100 @@
             <button class="next-btn" data-pass="5">Cat wooden toy</button>
         </div>
 
-        <div class="pass" id="pass-3">
-            <script src="music.js"></script>
-
-            <p>Your parents seem amused by it. They say you'll become a great cultivator. What will you do?</p>
-            
-            <button class="next-btn" data-pass="6" onclick="toMusic2()">Try to say "mama"</button>
-            <button class="next-btn" data-pass="7">Try to say "papa"</button>
+        
+        <div class="pass" id="pass-4">
+            <p>You grow up with an explendid talent with animals. Soon the Heavenly Sect discorvers you, what will you do? </p>
+            <button class="next-btn" data-pass="8" onclick="toMusic2(), background2()">Accept</button>
+            <button class="next-btn" data-pass="15">Politely decline</button>
         </div>
+
+        <div class="pass" id="pass-8">
+            <p>You have been accepted in the Heavenly Sect. What's your objective? </p>
+            <button class="next-btn" data-pass="10">Train hard and ascend</button>
+            <button class="next-btn" data-pass="11">Have a calm life</button>
+        </div>
+
+        
+        <div class="pass" id="pass-10">
+            <p>After years of training, you can finally ascend</p>
+            <button class="next-btn" data-pass="12" onclick="toMusic4()">Ascend</button>
+            <button class="next-btn" data-pass="13">Not ascend</button>
+        </div>
+
+        <div class="pass" id="pass-12">
+            <h1>Good ending!</h1>
+            <img src="https://i.pinimg.com/originals/ef/7a/31/ef7a313864cb8bd9afab41152476ae47.jpg" alt="">
+            <p>You ascend and become a powerfull god. You protect various small villages from demons and ghosts. Your name is widelly known.</p>
+            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+        </div>
+
+        <div class="pass" id="pass-13">
+            <h1>Respected ending!</h1>
+            <p>You don't ascend, instead you become a Elder Guardian of the Sect and become very respected by all students</p>
+            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+        </div>
+
+        <div class="pass" id="pass-3">
+
+            <p>You grow up being very polite and quiet. Once you are old enough, your parents tell you to follow your path</p>
+            
+            <button class="next-btn" data-pass="6" onclick="toMusic5()">Go to remote and isolated place</button>
+            <button class="next-btn" data-pass="7">Try to enter in the Heavenly Sect</button>
+        </div>
+
+        <div class="pass" id="pass-7">
+
+            <p>They say you need to pass in a test.</p>
+            
+            <button class="next-btn" data-pass="16" onclick="toMusic2()">Give your best</button>
+            <button class="next-btn" data-pass="17" onclick="toMusic5()">Think it's too easy</button>
+        </div>
+
+        <div class="pass" id="pass-16">
+
+            <p>You did so well in the test that every examinator gets shocked</p>
+            
+            <button class="next-btn" data-pass="8" onclick="background2()">Continue</button>
+    
+        </div>
+
+        <div class="pass" id="pass-17">
+
+            <p>You fail and feel humiliated, you dice to be isolated</p>
+            
+            <button class="next-btn" data-pass="6" onclick="toMusic5()">Continue</button>
+    
+        </div>
+
+        <div class="pass" id="pass-6">
+
+            <p>After years isolated, you start being tempted by demonic cultivators</p>
+            
+            <button class="next-btn" data-pass="14" onclick="toMusic3()">Give up and become a demonic cultivator</button>
+            <button class="next-btn" data-pass="15" onclick="toMusic2()">Return home and abandon the cultivation path</button>
+        </div>
+
+        <div class="pass" id="pass-14">
+
+            <h1>Bad ending!</h1>
+
+            <p>People fear you, they don't come any close to you.</p>
+             
+            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+            
+        </div>
+
+        <div class="pass" id="pass-15">
+
+            <h1>Simple ending!</h1>
+
+            <p>You return home and don't cultivate anymore. You're fine with being simple.</p>
+             
+            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+            
+        </div>
+
+
 
 
     </main>
