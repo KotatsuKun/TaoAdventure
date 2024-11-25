@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+    </style>
     <link rel="icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tao_symbol.svg/240px-Tao_symbol.svg.png"
         type="image/x-icon">
@@ -14,27 +17,29 @@
 
 <body>
 
-    
+
 
     <main>
 
         <div class="pass active" id="pass-0">
 
             <script src="music.js"></script>
+            <h1>道冒險</h1>
+            <h2>Tao Adventure</h2>
             <button class='next-btn' data-pass="1" onclick="Music1play(), background1()"> Start! </button>
-            
+
         </div>
 
         <div class="pass" id="pass-1">
             <p>You're being born. </p>
 
             <section class="buttons">
-                
+
                 <div class="cry-btn"> <button class="next-btn" data-pass="2">Cry</button> </div>
                 <div class="quiet-btn"> <button class="next-btn" data-pass="3">Be quiet</button> </div>
             </section>
 
-        
+
 
         </div>
 
@@ -44,9 +49,10 @@
             <button class="next-btn" data-pass="5">Cat wooden toy</button>
         </div>
 
-        
+
         <div class="pass" id="pass-4">
-            <p>You grow up with an explendid talent with animals. Soon the Heavenly Sect discorvers you, what will you do? </p>
+            <p>You grow up with an explendid talent with animals. Soon the Heavenly Sect discorvers you, what will you
+                do? </p>
             <button class="next-btn" data-pass="8" onclick="toMusic2(), background2()">Accept</button>
             <button class="next-btn" data-pass="15">Politely decline</button>
         </div>
@@ -57,7 +63,7 @@
             <button class="next-btn" data-pass="11">Have a calm life</button>
         </div>
 
-        
+
         <div class="pass" id="pass-10">
             <p>After years of training, you can finally ascend</p>
             <button class="next-btn" data-pass="12" onclick="toMusic4()">Ascend</button>
@@ -67,20 +73,24 @@
         <div class="pass" id="pass-12">
             <h1>Good ending!</h1>
             <img src="https://i.pinimg.com/originals/ef/7a/31/ef7a313864cb8bd9afab41152476ae47.jpg" alt="">
-            <p>You ascend and become a powerfull god. You protect various small villages from demons and ghosts. Your name is widelly known.</p>
-            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+            <p>You ascend and become a powerfull god. You protect various small villages from demons and ghosts. Your
+                name is widelly known.</p>
+            <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
         </div>
 
         <div class="pass" id="pass-13">
             <h1>Respected ending!</h1>
-            <p>You don't ascend, instead you become a Elder Guardian of the Sect and become very respected by all students</p>
-            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
+            <img src="https://i.pinimg.com/originals/24/a6/14/24a614e5d5be8bb32bd918f4f8fa398b.jpg" alt="">
+            <p>You don't ascend, instead you become a Elder Guardian of the Sect and become very respected by all
+                students</p>
+            <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
         </div>
 
         <div class="pass" id="pass-3">
 
-            <p>You grow up being very polite and quiet. Once you are old enough, your parents tell you to follow your path</p>
-            
+            <p>You grow up being very polite and quiet. Once you are old enough, your parents tell you to follow your
+                path</p>
+
             <button class="next-btn" data-pass="6" onclick="toMusic5()">Go to remote and isolated place</button>
             <button class="next-btn" data-pass="7">Try to enter in the Heavenly Sect</button>
         </div>
@@ -88,7 +98,7 @@
         <div class="pass" id="pass-7">
 
             <p>They say you need to pass in a test.</p>
-            
+
             <button class="next-btn" data-pass="16" onclick="toMusic2()">Give your best</button>
             <button class="next-btn" data-pass="17" onclick="toMusic5()">Think it's too easy</button>
         </div>
@@ -96,45 +106,51 @@
         <div class="pass" id="pass-16">
 
             <p>You did so well in the test that every examinator gets shocked</p>
-            
+
             <button class="next-btn" data-pass="8" onclick="background2()">Continue</button>
-    
+
         </div>
 
         <div class="pass" id="pass-17">
 
             <p>You fail and feel humiliated, you dice to be isolated</p>
-            
+
             <button class="next-btn" data-pass="6" onclick="toMusic5()">Continue</button>
-    
+
         </div>
 
         <div class="pass" id="pass-6">
 
             <p>After years isolated, you start being tempted by demonic cultivators</p>
-            
-            <button class="next-btn" data-pass="14" onclick="toMusic3()">Give up and become a demonic cultivator</button>
-            <button class="next-btn" data-pass="15" onclick="toMusic2()">Return home and abandon the cultivation path</button>
+
+            <button class="next-btn" data-pass="14" onclick="toMusic3()">Give up and become a demonic
+                cultivator</button>
+            <button class="next-btn" data-pass="15" onclick="toMusic2()">Return home and abandon the cultivation
+                path</button>
         </div>
 
         <div class="pass" id="pass-14">
 
             <h1>Bad ending!</h1>
 
+            <img src="https://i.pinimg.com/originals/fc/58/e3/fc58e3dfbb698149fd41d4602ddbecff.jpg" alt="">
+
             <p>People fear you, they don't come any close to you.</p>
-             
-            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
-            
+
+            <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+
         </div>
 
         <div class="pass" id="pass-15">
 
             <h1>Simple ending!</h1>
 
+            <img src="https://static.wikia.nocookie.net/modao-zushi/images/7/7d/Clan_Leader_Yao_%28manhua%29.png/revision/latest?cb=20220126040452" alt="">
+
             <p>You return home and don't cultivate anymore. You're fine with being simple.</p>
-             
-            <button class="next-btn" data-pass="0" onclick="stop()">Restart</button>
-            
+
+            <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+
         </div>
 
 

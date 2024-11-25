@@ -2,7 +2,7 @@
 body{
 
     background:
-    url(https://i.pinimg.com/736x/39/25/0c/39250c63d80f67c24606bb5f80ffd3c8.jpg);
+    url(https://i.pinimg.com/736x/39/25/0c/39250c63d80f67c24606bb5f80ffd3c8.jpg) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fill;
@@ -12,6 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0px;
+    font-family: "Yuji Mai", serif;
 }
 
 main{
@@ -21,7 +22,7 @@ main{
 }
 
 img{
-    max-width: 90%;
+    max-width: 50%;
 }
 
 button {
