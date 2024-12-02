@@ -5,7 +5,7 @@ var music3 = new Audio("心魔 - 《天官赐福》动画配乐.mp3");
 var music4 = new Audio("飞升 - 《天官赐福》动画配乐.mp3");
 var music5 = new Audio("与君山 - 《天官赐福》动画配乐.mp3")
 
-var volume = 0.4
+var volume = 0.6
 
 
 
