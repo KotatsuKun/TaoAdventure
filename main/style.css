@@ -9,7 +9,6 @@ body {
     align-items: center;
     margin: 0;
     padding: 1rem;
-    
     transition: background-color 1.5s ease-in-out;
     overflow-x: hidden;
 }
@@ -37,6 +36,7 @@ main {
     position: relative;
     z-index: 1;
     background-color: rgba(32, 32, 32, 0.85);
+    color: antiquewhite;
     text-align: center;
     border-radius: 15px;
     padding: 2rem;
