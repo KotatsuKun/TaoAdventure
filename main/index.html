@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tao_symbol.svg/240px-Tao_symbol.svg.png"
         type="image/x-icon">
@@ -16,27 +17,31 @@
 </head>
 
 <body>
-
-
-
+    <div id="bg-layer" class="bg1" aria-hidden="true"></div>
     <main>
 
-        <div class="pass active" id="pass-0">
+        <div id="music-controls" class="d-flex align-items-center justify-content-center mb-3">
+            <label for="music-volume" class="visually-hidden">Volume</label>
+            <input id="music-volume" type="range" min="0" max="100" value="55" class="form-range w-50"
+                aria-label="Volume">
+        </div>
 
-            <script src="music.js"></script>
-            <h1>道冒險</h1>
-            <h2>Tao Adventure</h2>
+        <div class="pass active" id="pass-0" data-bg="bg1">
 
-            <section class="buttons">
+            <section class="container">
+                <h1 class="ma-shan-zheng-regular">道冒险</h1>
+                <h2>Tao Adventure</h2>
 
-                <button class='next-btn' data-pass="1" onclick="Music1play(), background1()"> Start! </button>
+                <section class="buttons">
 
+                    <button class='next-btn' data-pass="1" data-track="1"> Start! </button>
+
+                </section>
             </section>
-
 
         </div>
 
-        <div class="pass" id="pass-1">
+        <div class="pass" id="pass-1" data-bg="bg4">
             <p>You're being born. </p>
 
             <img src="https://media.tenor.com/R7znNIFZZzMAAAAM/anime-cry.gif" alt="">
@@ -51,7 +56,7 @@
 
         </div>
 
-        <div class="pass" id="pass-2">
+        <div class="pass" id="pass-2" data-bg="bg4">
             <p>Your mom offers you a toy. Which one will you choose? </p>
 
             <img src="https://i.pinimg.com/originals/34/76/2c/34762c8816add3be01a4852ffd297886.gif" alt="">
@@ -66,7 +71,7 @@
         </div>
 
 
-        <div class="pass" id="pass-4">
+        <div class="pass " id="pass-4" data-bg="bg1">
 
             <p>You grow up with an explendid talent with animals. Soon the Heavenly Sect discorvers you, what will you
                 do? </p>
@@ -75,26 +80,26 @@
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="8" onclick="toMusic2(), background2()">Accept</button>
+                <button class="next-btn" data-pass="8" data-track="2">Accept</button>
                 <button class="next-btn" data-pass="15">Politely decline</button>
             </section>
 
         </div>
 
 
-        <div class="pass" id="pass-5">
+        <div class="pass" id="pass-5" data-bg="bg1">
             <p>You grow with explendid hability with qi manipulation. Soon the Heavenly Sect discorvers you, what will
                 you do? </p>
             <img src="https://i.pinimg.com/originals/05/da/84/05da84aab6556a8fe7dc64c96cfb2b65.gif" alt="">
 
             <section class="buttons">
-                <button class="next-btn" data-pass="7" onclick="toMusic2(), background2()">Accept</button>
+                <button class="next-btn" data-pass="7" data-track="2">Accept</button>
                 <button class="next-btn" data-pass="14">Politely decline</button>
             </section>
 
         </div>
 
-        <div class="pass" id="pass-8">
+        <div class="pass" id="pass-8" data-bg="bg1">
             <p>You have been accepted in the Heavenly Sect. What's your objective? </p>
 
             <section class="buttons">
@@ -106,7 +111,7 @@
 
         </div>
 
-        <div class="pass" id="pass-11">
+        <div class="pass" id="pass-11" data-bg="bg3">
             <p>You continue living a peaceful life, and eventually you become a elder guardian</p>
 
             <section class="buttons">
@@ -118,17 +123,17 @@
         </div>
 
 
-        <div class="pass" id="pass-10">
+        <div class="pass" id="pass-10" data-bg="bg1">
             <p>After years of training, you can finally ascend</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="12" onclick="toMusic4(), background5()">Ascend</button>
+                <button class="next-btn" data-pass="12" data-track="4">Ascend</button>
                 <button class="next-btn" data-pass="13">Not ascend</button>
             </section>
         </div>
 
-        <div class="pass" id="pass-12">
+        <div class="pass" id="pass-12" data-bg="bg2">
             <h1>Good ending!</h1>
             <img src="https://64.media.tumblr.com/003b4f7e058b9e1d55fbdaa136d5b13b/9ab5547ff5af36dd-01/s540x810/01948f3f4a6f1111a35417e3bda571521c8bc976.gifv"
                 alt="">
@@ -137,34 +142,34 @@
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+                <button class="next-btn" data-pass="0" data-action="stop">Restart</button>
 
             </section>
 
         </div>
 
-        <div class="pass" id="pass-13">
+        <div class="pass" id="pass-13" data-bg="bg3">
             <h1>Respected ending!</h1>
-            <img src="https://i.pinimg.com/originals/24/a6/14/24a614e5d5be8bb32bd918f4f8fa398b.jpg" alt="">
+            <img src="https://i.pinimg.com/originals/24/a6/14/24a614e5d5be8bb32bd918f4f8fa398b.jpg" width="300px">
             <p>You don't ascend, you become a Elder Guardian of the Sect and become very respected by all
                 students</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+                <button class="next-btn" data-pass="0" data-action="stop">Restart</button>
 
             </section>
 
         </div>
 
-        <div class="pass" id="pass-3">
+        <div class="pass" id="pass-3" data-bg="bg4">
 
             <p>You grow up being very polite and quiet. Once you are old enough, your parents tell you to follow your
                 path</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="6" onclick="toMusic5(), background4()">Go to remote and isolated
+                <button class="next-btn" data-pass="6" data-track="5">Go to remote and isolated
                     place</button>
                 <button class="next-btn" data-pass="7">Try to enter in the Heavenly Sect</button>
 
@@ -172,25 +177,25 @@
 
         </div>
 
-        <div class="pass" id="pass-7">
+        <div class="pass" id="pass-7" data-bg="bg1">
 
             <p>They say you need to pass in a test.</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="16" onclick="toMusic2()">Give your best</button>
-                <button class="next-btn" data-pass="17" onclick="toMusic5()">Think it's too easy</button>
+                <button class="next-btn" data-pass="16" data-track="2">Give your best</button>
+                <button class="next-btn" data-pass="17" data-track="5">Think it's too easy</button>
 
             </section>
         </div>
 
-        <div class="pass" id="pass-16">
+        <div class="pass" id="pass-16" data-bg="bg1">
 
             <p>You did so well in the test that every examinator gets shocked</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="8" onclick="background2()">Continue</button>
+                <button class="next-btn" data-pass="8">Continue</button>
 
             </section>
 
@@ -198,27 +203,27 @@
 
         </div>
 
-        <div class="pass" id="pass-17">
+        <div class="pass" id="pass-17" data-bg="bg6">
 
             <p>You fail and feel humiliated, you dice to be isolated</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="6" onclick="toMusic5(), background4()">Continue</button>
+                <button class="next-btn" data-pass="6" data-track="5">Continue</button>
 
             </section>
 
         </div>
 
-        <div class="pass" id="pass-6">
+        <div class="pass" id="pass-6" data-bg="bg6">
 
             <p>After years isolated, you start being tempted by demonic cultivators</p>
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="14" onclick="toMusic3(), background3()">Give up and become a demonic
+                <button class="next-btn" data-pass="14" data-track="3">Give up and become a demonic
                     cultivator</button>
-                <button class="next-btn" data-pass="15" onclick="toMusic2(), background1()">Return home and abandon the
+                <button class="next-btn" data-pass="15" data-track="2">Return home and abandon the
                     cultivation
                     path</button>
 
@@ -226,7 +231,7 @@
 
         </div>
 
-        <div class="pass" id="pass-14">
+        <div class="pass" id="pass-14" data-bg="bg5">
 
             <h1>Bad ending!</h1>
 
@@ -237,13 +242,13 @@
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+                <button class="next-btn" data-pass="0" data-action="stop">Restart</button>
 
             </section>
 
         </div>
 
-        <div class="pass" id="pass-15">
+        <div class="pass" id="pass-15" data-bg="bg4">
 
             <h1>Simple ending!</h1>
 
@@ -254,7 +259,7 @@
 
             <section class="buttons">
 
-                <button class="next-btn" data-pass="0" onclick="stop(), background2()">Restart</button>
+                <button class="next-btn" data-pass="0" data-action="stop">Restart</button>
 
             </section>
 
@@ -263,6 +268,7 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="music.js"></script>
 
 </body>
 

@@ -1,75 +1,221 @@
- 
-body{
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
 
-    width: 100vw;
-    height: 100vh;
-    background-image: url("https://i.pinimg.com/736x/39/25/0c/39250c63d80f67c24606bb5f80ffd3c8.jpg");
-    background-size:cover;
-    background-repeat:round;
+
+body {
     background-color: rgb(32, 32, 32);
     color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px;
-    font-family: "Yuji Mai", serif;
-    transition-duration: 1.5s;
-    transition-timing-function:ease-in-out;
-    overflow: auto;
-}
-
-main{
+    margin: 0;
+    padding: 1rem;
     
-    background-color: rgb(32, 32, 32);
-    text-align: center;
+    transition: background-color 1.5s ease-in-out;
+    overflow-x: hidden;
 }
 
-img{
-    width: 50%;
-    height: 50%;
-    align-self: center;
-}
-
-button {
-    width: 10vw;
-    height: 40vh;
-    row-gap: 5%;
-    background-color: gray;
+/* background layer sits behind the main content and receives bgN classes */
+#bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
     background-position: center;
-    color: white;
-    border-style: hidden;
-}
-
-button:hover{
-    background-color: darkgray;
-    background-blend-mode: overlay;
-}
-
-button:active{
-    background-color: rgb(71, 71, 71);
-    background-blend-mode: overlay;
-}
-
-/*.cry-btn button{
-    background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZiYTFrMngzbnU3aWZ3MTdjb3AyN2oyeGE1ZW5idm5nbzhuOWtpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3fmRTfVIKMRiM/giphy.webp);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    
-}*/
+    transition: opacity 0.5s ease, background-image 0.5s ease;
+    pointer-events: none;
+}
 
-.pass{
+.ma-shan-zheng-regular {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+main {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(32, 32, 32, 0.85);
+    text-align: center;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+main h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: rgb(200, 180, 140);
+}
+
+main p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.story-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-btn {
+    min-width: 150px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    border: 2px solid;
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.next-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pass {
     display: none;
 }
 
-.pass.active{
+.pass.active {
     display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .buttons {
-
     display: flex;
-    overflow-x: auto;
-    row-gap: 5%;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
+    align-items: center;
+}
 
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    main h1 {
+        font-size: 2.2rem;
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .next-btn {
+        min-width: 120px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .story-image {
+        max-height: 300px;
+    }
+}
+
+/* Music controls */
+#music-controls {
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#music-controls #music-track {
+    min-width: 160px;
+    font-size: 0.95rem;
+}
+
+#music-controls .form-range {
+    height: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    #music-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #music-controls .form-range {
+        width: 100%;
+    }
+}
+
+
+#bg-layer.bg1 {
+    background-image: url(assets/image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bg-layer.bg2 {
+    background-image: url(assets/image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bg-layer.bg3 {
+    background-image: url(assets/image3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bg-layer.bg4 {
+    background-image: url(assets/image4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bg-layer.bg5 {
+    background-image: url(assets/image5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bg-layer.bg6 {
+    background-image: url(assets/image6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

@@ -1,34 +1,56 @@
-const passnext = document.querySelectorAll('.next-btn');
+document.addEventListener('DOMContentLoaded', () => {
+    const bgClasses = ['bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6'];
+    const bgLayer = document.getElementById('bg-layer');
+    const FADE_DURATION = 300; // ms
 
-passnext.forEach(button => {
-    button.addEventListener('click', function(){
-        const active = document.querySelector('.active');
-        const nextpass = 'pass-' + this.getAttribute('data-pass');
+    async function setBgFromElement(el, withFade = false) {
+        if (!bgLayer) return;
+        
+        const target = el && el.dataset && el.dataset.bg ? el.dataset.bg : null;
+        if (!target || !bgClasses.includes(target)) return;
+        
+        // if already on this bg, skip
+        if (bgLayer.classList.contains(target)) return;
+        
+        if (withFade) {
+            // fade out
+            bgLayer.style.transition = `opacity ${FADE_DURATION}ms ease`;
+            bgLayer.style.opacity = '0';
+            
+            // wait for fade out, then switch background
+            await new Promise(resolve => setTimeout(resolve, FADE_DURATION));
+        }
+        
+        // remove existing bg classes and add new one
+        bgClasses.forEach(c => bgLayer.classList.remove(c));
+        bgLayer.classList.add(target);
+        
+        if (withFade) {
+            // fade in
+            bgLayer.style.opacity = '1';
+            await new Promise(resolve => setTimeout(resolve, FADE_DURATION));
+            bgLayer.style.transition = `opacity 0.5s ease, background-image 0.5s ease`;
+        }
+    }
 
-        active.classList.remove('active');
-        document.getElementById(nextpass).classList.add('active');
+    // initialize background from current active pass (no fade on load)
+    const initial = document.querySelector('.pass.active');
+    setBgFromElement(initial, false);
 
-    })
-})
+    const passnext = document.querySelectorAll('.next-btn');
+    passnext.forEach(button => {
+        button.addEventListener('click', function () {
+            const active = document.querySelector('.pass.active');
+            const nextpassId = 'pass-' + this.getAttribute('data-pass');
+            const nextEl = document.getElementById(nextpassId);
 
+            if (!nextEl || !active) return;
 
-function background1(){
-    document.body.style.backgroundImage = "url('https://static.wikia.nocookie.net/modao-zushi/images/5/59/Lotus_Pier.png/revision/latest?cb=20191123060530')";
-}
+            active.classList.remove('active');
+            nextEl.classList.add('active');
 
-function background2(){
-    document.body.style.backgroundImage = "url('https://i.pinimg.com/736x/39/25/0c/39250c63d80f67c24606bb5f80ffd3c8.jpg')";
-}
-
-function background3(){
-    document.body.style.backgroundImage = "url('https://static.wikia.nocookie.net/modao-zushi/images/1/1e/Burial_Mounds_-_2.png/revision/latest?cb=20200512073257')";
-}
-
-function background4(){
-    document.body.style.backgroundImage = "url('https://static.wikia.nocookie.net/heaven-officials-blessing/images/2/20/Puji_shrine_donghua.png/revision/latest?cb=20201121072112')";
-}
-
-
-function background5(){
-    document.body.style.backgroundImage = "url('https://images6.alphacoders.com/136/thumb-350-1367773.webp')";
-}
+            // fade background transition when moving to next pass
+            setBgFromElement(nextEl, true);
+        });
+    });
+});
